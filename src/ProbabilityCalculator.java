@@ -35,5 +35,6 @@ public class ProbabilityCalculator {
         Chance notOfSecondCoinProbability = probabilityOfSecondCoin.not();
         Chance probabilityOfNonOccurence = notOfFirstCoinProbability.and(notOfSecondCoinProbability);
         return probabilityOfNonOccurence.not();
+
     }
 }
