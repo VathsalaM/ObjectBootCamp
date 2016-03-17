@@ -7,23 +7,23 @@ Job of rectangle -
  */
 
 public class Rectangle implements Shape {
-    private final Measurement length;
-    private final Measurement width;
+    private final Length length;
+    private final Length width;
 
-    public Rectangle(Measurement length, Measurement width) {
+    public Rectangle(Length length, Length width) {
 
         this.length = length;
         this.width = width;
     }
 
     @Override
-    public Measurement calculateArea() {
+    public Length calculateArea() {
         return (length.multiply(width));
     }
 
     @Override
-    public Measurement calculatePerimeter() {
-        Measurement sum = (length.add(width));
+    public Length calculatePerimeter() {
+        Length sum = (length.add(width));
         return sum.multiply(2);
     }
 }

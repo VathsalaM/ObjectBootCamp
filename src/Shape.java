@@ -1,4 +1,4 @@
 public interface Shape {
-    Measurement calculateArea();
-    Measurement calculatePerimeter();
+    Length calculateArea();
+    Length calculatePerimeter();
 }
