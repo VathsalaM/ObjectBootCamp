@@ -12,4 +12,6 @@ public class Square extends Rectangle{
             return new Square(length,length);
         throw new NonPositiveValueException(length.toString());
     }
+
+
 }
