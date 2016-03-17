@@ -10,13 +10,15 @@ public class Rectangle {
     private final Length length;
     private final Length width;
 
-    public static Rectangle create(Length length, Length width){
-        if(length.isPositive() && width.isPositive() )
-            return new Rectangle(length,width);
-        throw new RuntimeException("Only positive values allowed");
+    public static Rectangle create(Length length, Length width) throws NonPositiveValueException {
+        if(!length.isPositive())
+            throw new NonPositiveValueException(length.toString());
+        if(!width.isPositive())
+            throw new NonPositiveValueException(width.toString());
+        return new Rectangle(length,width);
     }
 
-    private Rectangle(Length length, Length width) {
+    protected Rectangle(Length length, Length width) {
         this.length = length;
         this.width = width;
     }

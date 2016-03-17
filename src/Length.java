@@ -9,10 +9,10 @@
 
 public class Length {
 
-    private final int value;
+    private final double value;
     private final String unit;
 
-    public Length(int value, String unit) {
+    public Length(double value, String unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -32,15 +32,17 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Length that = (Length) o;
-
         if (value != that.value) return false;
         return unit != null ? unit.equals(that.unit) : that.unit == null;
     }
 
-
     public boolean isPositive() {
         return value>0;
+    }
+
+    @Override
+    public String toString() {
+        return ""+value;
     }
 }
