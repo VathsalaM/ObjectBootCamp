@@ -1,3 +1,12 @@
+/*
+        Add the values of other length and return length
+
+        Multiply the value with other length or number
+
+        check for the positivity of value
+
+ */
+
 public class Length {
 
     private final int value;
@@ -31,6 +40,7 @@ public class Length {
     }
 
 
-
-
+    public boolean isPositive() {
+        return value>0;
+    }
 }
