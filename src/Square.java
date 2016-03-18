@@ -3,7 +3,7 @@
  */
 
 public class Square extends Rectangle{
-    private Square(Length length, Length width) {
+    protected Square(Length length, Length width) {
         super(length, width);
     }
 
