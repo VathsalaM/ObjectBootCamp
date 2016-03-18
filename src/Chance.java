@@ -1,3 +1,7 @@
+/*
+       Job of class :
+        to perform basic operations like and,or,not
+ */
 public class Chance {
     private double value;
 
