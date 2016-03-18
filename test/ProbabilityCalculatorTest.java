@@ -28,10 +28,11 @@ public class ProbabilityCalculatorTest {
     }
 
     @Test
-    public void getProbabilityOfAtLeastOneOccerrence_gives_the_probability_of_single_occurrence() throws Exception, InvalidProbabilityException {
+    public void getProbabilityOfAtLeastOneOccurrence_gives_the_probability_of_single_occurrence() throws Exception, InvalidProbabilityException {
         int sampleSpaceOfTwoCoins = 4;
         int numberOfFavourableOccurrenceForBothTails = 1;
         ProbabilityCalculator probabilityCalculator = new ProbabilityCalculator(sampleSpaceOfTwoCoins);
-        assertTrue(Chance.create(0.75).equals(probabilityCalculator.getProbabilityOfAtLeastOneOccurrence()));
+        int numberOfFaces = 2;
+        assertTrue(Chance.create(0.75).equals(probabilityCalculator.getProbabilityOfAtLeastOneOccurrence(numberOfFaces)));
     }
 }

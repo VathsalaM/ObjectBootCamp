@@ -28,9 +28,9 @@ public class ProbabilityCalculator {
         return getProbabilityOfOccurrence(numberOfFavourableOccurrence).not();
     }
 
-    public Chance getProbabilityOfAtLeastOneOccurrence() throws InvalidProbabilityException {
-        Chance probabilityOfFirstCoin = getProbabilityOfOccurrence(sampleSpace/2);
-        Chance probabilityOfSecondCoin = getProbabilityOfOccurrence(sampleSpace/2);
+    public Chance getProbabilityOfAtLeastOneOccurrence(int numberOfFaces) throws InvalidProbabilityException {
+        Chance probabilityOfFirstCoin = getProbabilityOfOccurrence(sampleSpace/numberOfFaces);
+        Chance probabilityOfSecondCoin = getProbabilityOfOccurrence(sampleSpace/numberOfFaces);
         Chance notOfFirstCoinProbability = probabilityOfFirstCoin.not();
         Chance notOfSecondCoinProbability = probabilityOfSecondCoin.not();
         Chance probabilityOfNonOccurence = notOfFirstCoinProbability.and(notOfSecondCoinProbability);

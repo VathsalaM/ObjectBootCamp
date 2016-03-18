@@ -10,15 +10,15 @@
 public class Length {
 
     private final double value;
-    private final String unit;
+    private final Unit unit;
 
-    public Length(double value, String unit) {
+    public Length(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
 
     public Length multiply(Length other) {
-        return new Length(this.value*other.value,this.unit+"x"+other.unit);
+        return new Length(this.value*other.value,this.unit.multiply(other.unit));
     }
     public Length multiply(int other) {
         return new Length(this.value*other,this.unit);
@@ -33,8 +33,7 @@ public class Length {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Length that = (Length) o;
-        if (value != that.value) return false;
-        return unit != null ? unit.equals(that.unit) : that.unit == null;
+        return value == that.value && (unit != null ? unit.equals(that.unit) : that.unit == null);
     }
 
     public boolean isPositive() {
