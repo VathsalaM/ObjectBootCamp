@@ -1,3 +1,5 @@
+package extraTests;
+
 public class FeetTest {
 //    @Test
 //    public void ShouldConvertFeetsIntoInches() throws Exception {

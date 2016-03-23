@@ -1,4 +1,4 @@
-package Object;
+package Exceptions;
 
 public class NonPositiveValueException extends Throwable {
     public NonPositiveValueException(String value) {

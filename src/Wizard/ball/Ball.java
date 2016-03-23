@@ -1,4 +1,4 @@
-package wizard;
+package wizard.ball;
 
 public class Ball {
     private ColourOfBalls colour;

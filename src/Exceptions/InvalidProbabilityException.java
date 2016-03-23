@@ -1,4 +1,4 @@
-package Object;
+package Exceptions;
 
 public class InvalidProbabilityException extends Throwable {
     public InvalidProbabilityException() {
