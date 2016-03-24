@@ -11,4 +11,8 @@ public class Ball {
     public boolean isSameColour(ColourOfBalls expectedColour) {
         return colour.equals(expectedColour);
     }
+
+    public ColourOfBalls getColour() {
+        return colour;
+    }
 }

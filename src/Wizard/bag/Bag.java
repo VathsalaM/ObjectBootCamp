@@ -6,6 +6,8 @@ import wizard.ReadOnlyBalls;
 import wizard.ball.Ball;
 import wizard.ball.Balls;
 import wizard.rules.Rules;
+import wizard.summary.Summarizer;
+import wizard.summary.Summary;
 
 /*
     Job of class :
@@ -35,5 +37,9 @@ public class Bag {
             return true;
         }
         throw new PlacementRuleViolationException();
+    }
+
+    public Summary getSummary(Summarizer summarizer) {
+        return balls.summarize(summarizer);
     }
 }

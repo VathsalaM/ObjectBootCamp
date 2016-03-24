@@ -9,7 +9,13 @@ import wizard.bag.Bag;
 import wizard.ball.Ball;
 import wizard.ball.ColourOfBalls;
 import wizard.rules.*;
+import wizard.summary.ColourSummarizer;
+import wizard.summary.Summarizer;
+import wizard.summary.Summary;
 
+import java.util.HashMap;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class BagTest {
@@ -163,16 +169,23 @@ public class BagTest {
         bag.put(new Ball(ColourOfBalls.YELLOW));
     }
 
-//    @Test
-//    public void Should_give_summary_of_balls() throws PlacementRuleViolationException, LimitExceedExcetion {
-//        Bag bag = new Bag();
-//        bag.put(new Ball(ColourOfBalls.GREEN));
-//        bag.put(new Ball(ColourOfBalls.GREEN));
-//        String summary = bag.getSummary();
+    @Test
+    public void Should_give_summary_of_balls() throws PlacementRuleViolationException, LimitExceedExcetion {
+        Rules rules = new Rules();
+        rules.add(new RuleForGreenBall());
+        Bag bag = new Bag(12,rules);
+        bag.put(new Ball(ColourOfBalls.GREEN));
+        bag.put(new Ball(ColourOfBalls.GREEN));
+        Summarizer summarizer = new ColourSummarizer();
+        Summary summary = bag.getSummary(summarizer);
+        HashMap<ColourOfBalls,Integer> expectedSummaryList = new HashMap<>();
+        expectedSummaryList.put(ColourOfBalls.GREEN,2);
+        Summary expectedSummary = new Summary(expectedSummaryList);
+        assertEquals(expectedSummary,summary);
 //        String expected = "Bag : 2 Balls \n2G";
-//        assertEquals(expected, summary);
-//    }
-//
+//        assertEquals(expected, summary.toString());
+    }
+
 //    @Test
 //    public void Should_give_summary_of_five_different_balls() throws PlacementRuleViolationException, LimitExceedExcetion {
 //        Bag bag = new Bag();

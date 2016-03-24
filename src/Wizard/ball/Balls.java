@@ -1,6 +1,10 @@
 package wizard.ball;
 
+import wizard.summary.Summarizer;
+import wizard.summary.Summary;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Balls {
     private ArrayList<Ball> balls = new ArrayList<>();
@@ -19,5 +23,9 @@ public class Balls {
 
     public int size() {
         return balls.size();
+    }
+
+    public Summary summarize(Summarizer summary) {
+        return summary.getSummary(balls);
     }
 }
